@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         surfaceView = binding.surfaceView
-        roulette = Roulette(surfaceView, this, binding)
+        roulette = Roulette(surfaceView, binding)
 
 
         val button = binding.btPlay
