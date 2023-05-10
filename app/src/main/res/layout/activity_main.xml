@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/play"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#9CFAA0"
+    tools:context=".MainActivity">
+
+    <SurfaceView
+        android:id="@+id/surfaceView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#000000"
+        android:backgroundTint="#25193A"
+        android:foregroundTint="#000000"
+        android:stateListAnimator="@android:anim/anticipate_overshoot_interpolator"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--    <ImageView-->
+    <!--        android:id="@+id/roulette_img"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginBottom="165dp"-->
+    <!--        android:visibility="visible"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/arrow_img"-->
+    <!--        app:srcCompat="@drawable/roulette_img" />-->
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="279dp"
+        android:layout_height="279dp"
+        android:layout_gravity="center"
+        app:cardCornerRadius="250dp"
+        app:layout_constraintBottom_toTopOf="@+id/btPlay"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/surfaceView"
+        app:layout_constraintVertical_bias="0.35000002">
+
+        <ImageView
+            android:id="@+id/roulette_img"
+            android:layout_width="295dp"
+            android:layout_height="295dp"
+            android:layout_gravity="center"
+            android:background="#FFFFFF"
+            android:backgroundTint="#FFFFFF"
+            android:foregroundTint="#FFFFFF"
+            android:scaleType="centerCrop"
+            android:src="@drawable/roulette_img" />
+
+    </androidx.cardview.widget.CardView>
+
+    <ImageView
+        android:id="@+id/arrow_img"
+        android:layout_width="52dp"
+        android:layout_height="32dp"
+        android:background="#00673AB7"
+        app:layout_constraintBottom_toTopOf="@+id/cardView"
+        app:layout_constraintEnd_toEndOf="@+id/cardView"
+        app:layout_constraintStart_toStartOf="@+id/cardView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@android:drawable/arrow_down_float" />
+
+    <Button
+        android:id="@+id/btPlay"
+        android:layout_width="212dp"
+        android:layout_height="80dp"
+        android:layout_marginBottom="30dp"
+        android:allowUndo="true"
+        android:backgroundTint="#000000"
+        android:backgroundTintMode="add"
+        android:drawableTint="#000000"
+        android:foregroundTint="#000000"
+        android:shadowColor="#FFEB3B"
+        android:shadowDx="5"
+        android:shadowRadius="50"
+        android:soundEffectsEnabled="true"
+        android:text="Крутить!"
+        android:textColor="#89F372"
+        android:textColorHighlight="#000000"
+        android:textColorHint="#000000"
+        android:textColorLink="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold|italic"
+        android:visibility="visible"
+        app:cornerRadius="45dp"
+        app:iconTint="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:rippleColor="#000000"
+        app:strokeColor="#000000" />
+
+    <EditText
+        android:id="@+id/etBetting"
+        android:layout_width="176dp"
+        android:layout_height="88dp"
+        android:digits="0123456789"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Введите число:"
+        android:inputType="numberDecimal"
+        android:shadowColor="#89FF00"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="70"
+        android:textColor="#88F272"
+        android:textColorHighlight="#46859F67"
+        android:textColorHint="#1D77FF00"
+        android:textColorLink="#FF0000"
+        android:textScaleX="1.2"
+        android:textSize="16sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toTopOf="@+id/btPlay"
+        app:layout_constraintEnd_toEndOf="@+id/cardView"
+        app:layout_constraintStart_toStartOf="@+id/cardView"
+        app:layout_constraintTop_toBottomOf="@+id/cardView" />
+
+    <TextView
+        android:id="@+id/tvIndex"
+        android:layout_width="264dp"
+        android:layout_height="27dp"
+        android:gravity="center"
+        android:shadowColor="#FFFF00"
+        android:shadowRadius="30"
+        android:textColor="#C488F272"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/arrow_img"
+        app:layout_constraintEnd_toEndOf="@+id/arrow_img"
+        app:layout_constraintStart_toStartOf="@+id/arrow_img"
+        app:layout_constraintTop_toTopOf="@+id/surfaceView"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/tvBet"
+        android:layout_width="264dp"
+        android:layout_height="28dp"
+        android:gravity="center"
+        android:shadowColor="#FFFF00"
+        android:shadowRadius="30"
+        android:textColor="#AE88F272"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvIndex"
+        app:layout_constraintEnd_toEndOf="@+id/arrow_img"
+        app:layout_constraintStart_toStartOf="@+id/arrow_img"
+        app:layout_constraintTop_toTopOf="@+id/surfaceView"
+        app:layout_constraintVertical_bias="0.75" />
+
+    <TextView
+        android:id="@+id/tvLose"
+        android:layout_width="264dp"
+        android:layout_height="28dp"
+        android:gravity="center"
+        android:shadowColor="#FFFF00"
+        android:shadowRadius="30"
+        android:text="ПРОИГРЫШ!("
+        android:textColor="#FF0000"
+        android:textSize="20sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/etBetting"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView" />
+
+    <TextView
+        android:id="@+id/tvWin"
+        android:layout_width="264dp"
+        android:layout_height="28dp"
+        android:gravity="center"
+        android:shadowColor="#FFFF00"
+        android:shadowRadius="30"
+        android:text="ВЫЙГРЫШ!!!"
+        android:textColor="#AE88F272"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/etBetting"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
